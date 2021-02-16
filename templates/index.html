@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <title>Book Order</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script>
+        $(document).ready(function () {
+          var i = 1
+          $("#addMore").click(function(e){
+            var html = `<div class="row mt-3"><div class="col-6"><input type="text" class="form-control" placeholder="Book Name" name="bookName_${i}" id="bookName_${i}"></div><div class="col-5"><input type="text" class="form-control" placeholder="Publisher Name" id="publisherName_${i}" name="publisherName_${i}"></div><button type="button" class="btn btn-danger ml-3" id="remove">X</button></div>`
+            $("#addMoreDetails").append(html)
+            i++
+          });
+          $("#addMoreDetails").on('click', '#remove', function(e){
+            $(this).parent('div').remove();
+          });
+        });
+      </script>
+    </head>
+    <body style="background-color:#f6b023;">
+      <div class="mt-5 container-md shadow-lg rounded" style="background-color:rgb(228, 227, 227); max-width:800px">
+        <form action="/success" method = "POST">
+            <div class="form-group pt-5">
+              <div class="row ml-1 mb-3">
+                <h3>Contact Details</h3>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="First name" name="firstName">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Last name" name="lastName">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Email" name="email">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Phone" name="phone">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Street Address Line 1" name="streetAdd1">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Street Address Line 2" name="streetAdd2">
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="City" name="city">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="State" name="state">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Postal / Zip Code" name="pincode">
+                </div>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Country" name="country">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-10">
+                  <h3>Order Details</h3>
+                </div>
+                <div class="col-2">
+                  <button type="button" id="addMore" name="addMore" class="btn btn-primary float-right">+</button>
+                </div>
+              </div> 
+            </div>
+            <div class="form-group" id = "addMoreDetails">
+              <div class="row">
+                <div class="col-6">
+                  <input type="text" class="form-control" placeholder="Book Name" id="bookName_0" name="bookName_0">
+                </div>
+                <div class="col-5">
+                  <input type="text" class="form-control" placeholder="Publisher Name" id="publisherName_0" name="publisherName_0">
+                </div>
+                <button type="button" class="btn btn-danger ml-3" id="remove" name="remove">X</button>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <input type="submit" id="submit" class="btn btn-primary btn-block btn-lg mx-auto mb-4 mt-4" name="submit"></input>
+                </div>
+              </div>
+            </div>
+        </form>
+      </div>
+    </body>
+</html>

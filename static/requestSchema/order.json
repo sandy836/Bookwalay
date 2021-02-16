@@ -1,0 +1,15 @@
+{
+    "orderId":"",
+    "firstName":"",
+    "lastName":"",
+    "email":"",
+    "phone":"",
+    "streetAdd1":"",
+    "streetAdd2":"",
+    "state":"",
+    "city":"",
+    "pincode":"",
+    "country":"",
+    "orderList":[
+    ]
+}
