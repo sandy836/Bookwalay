@@ -6,17 +6,17 @@ log = logging.getLogger(__name__)
 
 
 # Tue, 21 Mar 2006 20:50:14.000 GMT
-twepoch = 1142974214000L
+twepoch = 1142974214000
 
-worker_id_bits = 5L
-data_center_id_bits = 5L
-max_worker_id = -1L ^ (-1L << worker_id_bits)
-max_data_center_id = -1L ^ (-1L << data_center_id_bits)
-sequence_bits = 12L
+worker_id_bits = 5
+data_center_id_bits = 5
+max_worker_id = -1^(-1 << worker_id_bits)
+max_data_center_id = -1 ^ (-1 << data_center_id_bits)
+sequence_bits = 12
 worker_id_shift = sequence_bits
 data_center_id_shift = sequence_bits + worker_id_bits
 timestamp_left_shift = sequence_bits + worker_id_bits + data_center_id_bits
-sequence_mask = -1L ^ (-1L << sequence_bits)
+sequence_mask = -1 ^ (-1 << sequence_bits)
 
 
 def snowflake_to_timestamp(_id):
@@ -34,7 +34,7 @@ def generator(worker_id, data_center_id, sleep=lambda x: time.sleep(x/1000.0)):
     sequence = 0
 
     while True:
-        timestamp = long(time.time()*1000)
+        timestamp = int(time.time()*1000)
 
         if last_timestamp > timestamp:
             log.warning(
