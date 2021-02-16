@@ -10,7 +10,7 @@
         $(document).ready(function () {
           var i = 1
           $("#addMore").click(function(e){
-            var html = `<div class="row mt-3"><div class="col-6"><input type="text" class="form-control" placeholder="Book Name" name="bookName_${i}" id="bookName_${i}"></div><div class="col-5"><input type="text" class="form-control" placeholder="Publisher Name" id="publisherName_${i}" name="publisherName_${i}"></div><button type="button" class="btn btn-danger ml-3" id="remove">X</button></div>`
+            var html = `<div class="row mt-3"><div class="col-6"><input type="text" class="form-control" placeholder="Book Name" name="bookName_${i}" id="bookName_${i}"></div><div class="col-5"><input type="text" class="form-control" placeholder="Publisher Name" id="publisherName_${i}" name="publisherName_${i}"></div><button type="button" class="btn btn-danger" id="remove">X</button></div>`
             $("#addMoreDetails").append(html)
             i++
           });
@@ -21,10 +21,10 @@
       </script>
     </head>
     <body style="background-color:#f6b023;">
-      <div class="mt-5 container-md shadow-lg rounded" style="background-color:rgb(228, 227, 227); max-width:800px">
+      <div class="mt-5 container-md shadow-lg rounded" style="background-color:rgb(228, 227, 227); max-width:650px">
         <form action="/success" method = "POST">
             <div class="form-group pt-5">
-              <div class="row ml-1 mb-3">
+              <div class="row ml-1 mb-2">
                 <h3>Contact Details</h3>
               </div>
               <div class="row">
@@ -69,7 +69,10 @@
               </div>
             </div>
             <div class="form-group">
-              <div class="row">
+              
+            </div>
+            <div class="form-group" id = "addMoreDetails">
+              <div class="row mb-2">
                 <div class="col-10">
                   <h3>Order Details</h3>
                 </div>
@@ -77,8 +80,6 @@
                   <button type="button" id="addMore" name="addMore" class="btn btn-primary float-right">+</button>
                 </div>
               </div> 
-            </div>
-            <div class="form-group" id = "addMoreDetails">
               <div class="row">
                 <div class="col-6">
                   <input type="text" class="form-control" placeholder="Book Name" id="bookName_0" name="bookName_0">
@@ -86,13 +87,13 @@
                 <div class="col-5">
                   <input type="text" class="form-control" placeholder="Publisher Name" id="publisherName_0" name="publisherName_0">
                 </div>
-                <button type="button" class="btn btn-danger ml-3" id="remove" name="remove">X</button>
+                <button type="button" class="btn btn-danger" id="remove" name="remove">X</button>
               </div>
             </div>
             <div class="form-group">
               <div class="row">
                 <div class="col">
-                  <input type="submit" id="submit" class="btn btn-primary btn-block btn-lg mx-auto mb-4 mt-4" name="submit"></input>
+                  <center><input type="submit" id="submit" class="btn btn-primary btn-lg mx-auto mb-4 mt-4" name="submit"></input></center>
                 </div>
               </div>
             </div>

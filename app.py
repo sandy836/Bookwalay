@@ -56,8 +56,8 @@ def save_order():
     orderId = generateUniqueOrderId()
     order['orderId'] = orderId
     LOG.info("Push Data")
-    db.child(orderId).set(order)
-    return 'Successfully placed order'
+    res = db.child(orderId).set(order)
+    return render_template('success.html', orderId = orderId)
 
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(debug = True)    
