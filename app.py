@@ -43,7 +43,7 @@ def create_order_details(response):
 def place_order():
     return render_template('index.html')
 
-@app.route('/success', methods = ['POST'])
+@app.route('/success', methods = ['GET', 'POST'])
 def save_order():
     config_url = os.path.join(SITE_ROOT, "static/requestSchema", "config.json")
     firebaseConfig = json.load(open(config_url))
