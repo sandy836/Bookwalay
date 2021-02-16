@@ -13,7 +13,7 @@ app = Flask(__name__)
 orderIdgenerator = generateOrderid.generator(1, 1)
 
 def generateUniqueOrderId():
-    return generateOrderid.snowflake_to_timestamp(orderIdgenerator.next())
+    return generateOrderid.snowflake_to_timestamp(orderIdgenerator.__next__)
 
 def create_order_details(response):
     LOG.info("Creating Json Structure of the Order Details")
