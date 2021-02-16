@@ -3,17 +3,15 @@ import pyrebase
 import os
 import logging
 import time
-import generateOrderid
 
 LOG_FORMAT = "%(asctime)s %(levelname)s : %(message)s"
 logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 LOG = logging.getLogger(__name__)
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
 app = Flask(__name__)
-orderIdgenerator = generateOrderid.generator(1, 1)
 
 def generateUniqueOrderId():
-    return generateOrderid.snowflake_to_timestamp(orderIdgenerator.__next__)
+    return int(round(time.time() * 1000))
 
 def create_order_details(response):
     LOG.info("Creating Json Structure of the Order Details")
