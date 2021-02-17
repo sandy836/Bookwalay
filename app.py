@@ -18,25 +18,26 @@ def create_order_details(response):
     order_url = os.path.join(SITE_ROOT, "static/requestSchema", "order.json")
     bookDetails_url = os.path.join(SITE_ROOT, "static/requestSchema", "bookDetails.json")
     order = json.load(open(order_url))
-    book_detail_list = []
+    book_detail_dict = {}
     LOG.info("Started parsing Json Data")
     for key, value in response.items():
         if key == 'submit':
             continue
         elif len(key.split('_')) == 2:
-            _len = int(key.split('_')[1])
-            if len(book_detail_list) == _len:
-                book_detail_list.append([value])
+            book_detail_key = int(key.split('_')[1])
+            if book_detail_key not in book_detail_dict:
+                book_detail_dict[book_detail_key] = ['', '']
+            if 'bookName' in key:
+                book_detail_dict[book_detail_key][0] = value
             else:
-                book_detail_list[_len].append(value)
+                book_detail_dict[book_detail_key][1] = value
         else:
             order[key] = value
-    for bookDetails in book_detail_list:
+    for _, bookDetails in book_detail_dict.items():
         bookDetailsStruc = json.load(open(bookDetails_url))
         bookDetailsStruc['bookName'] = bookDetails[0]
         bookDetailsStruc['publisherName'] = bookDetails[1]
         order['orderList'].append(bookDetailsStruc)
-    
     return order
          
 @app.route('/', methods = ['GET'])
