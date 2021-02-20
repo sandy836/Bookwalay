@@ -1,4 +1,3 @@
-from _typeshed import SupportsKeysAndGetItem
 from flask import Flask, render_template, request, json
 import firebase_admin
 from firebase_admin import credentials
