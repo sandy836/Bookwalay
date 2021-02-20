@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, json
-import pyrebase
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore 
 import os
 import logging
 import time
@@ -8,10 +10,19 @@ LOG_FORMAT = "%(asctime)s %(levelname)s : %(message)s"
 logging.basicConfig(level=logging.INFO, format=LOG_FORMAT)
 LOG = logging.getLogger(__name__)
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+
+config_url = os.path.join(SITE_ROOT, "static/requestSchema", "config.json")
+firebaseConfig = json.load(open(config_url))
+LOG.info("Initialize Configuration")
+cred = credentials.Certificate(firebaseConfig)
+firebase_admin.initialize_app(cred)
+LOG.info("Initailized DB client")
+db = firestore.client()
+
 app = Flask(__name__)
 
 def generateUniqueOrderId():
-    return int(round(time.time() * 1000))
+    return str(round(time.time() * 1000))
 
 def create_order_details(response):
     LOG.info("Creating Json Structure of the Order Details")
@@ -46,18 +57,14 @@ def place_order():
 
 @app.route('/success', methods = ['POST'])
 def save_order():
-    config_url = os.path.join(SITE_ROOT, "static/requestSchema", "config.json")
-    firebaseConfig = json.load(open(config_url))
-    LOG.info("Initialize Configuration")
-    firebase = pyrebase.initialize_app(firebaseConfig)
-    LOG.info("Initialize Database")
-    db = firebase.database()
     order = create_order_details(request.form.to_dict(flat=True))
     LOG.info("Creating unique orderId")
-    orderId = generateUniqueOrderId()
+    orderId = '1613807461009'
     order['orderId'] = orderId
     LOG.info("Push Data")
-    res = db.child(orderId).set(order)
+    res = db.collection('Order').document(orderId).set(order)
+    LOG.info("Information pushed to Db")
+    LOG.info(res)
     return render_template('success.html', orderId = orderId)
 
 if __name__ == '__main__':

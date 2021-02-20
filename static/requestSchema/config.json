@@ -1,10 +1,13 @@
 {
-    "apiKey": "AIzaSyBY_DXV2e_fJ3UVmk70eRMcv9TpIBCN1zM",
-    "authDomain": "bookwalay-3e5ef.firebaseapp.com",
-    "projectId": "bookwalay-3e5ef",
-    "databaseURL": "https://bookwalay-3e5ef-default-rtdb.firebaseio.com",
-    "storageBucket": "bookwalay-3e5ef.appspot.com",
-    "messagingSenderId": "1023212914366",
-    "appId": "1:1023212914366:web:e0c409d36dafeb38dc00ef",
-    "measurementId": "G-XE77M5SGMS"
-}
+    "type": "service_account",
+    "project_id": "bookwalay-3e5ef",
+    "private_key_id": "11e3f92ca5d8f4f1922749d798f128bc941db94d",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDMVXI5uz8hvfT+\nNsSSRtEANf7xRgab0RdOCE43462s8aY0768vSTNrgU/ojvY+GKQasM4jvXzrySsI\n+OtcZAWEYeKnhBXPnai056g8VseD+PoLjMeRYyzCZiuqA/m+yaMkoDv9Nv+iDmKy\n5b05EsajSn3/aadokfHbfd6N7LQrbeJgjN5Ts08AqlKcKTCPEzSKkH6AoYXESniX\n+g5p6zirl1R5wrGlLdzbYkF761WSZQwweXLu0a6I1fUQ3D7Bd2f6K6zII/KLfO/G\nm+kA1PfOKzJ8jSr521qZ4qrmtyyhZLkA/s/f14cU5RzJlU9OJh6TmmHnsJDy3Qhh\nTqXNoVhxAgMBAAECggEAE5SvmsUtDlZ1+wN0EGFtZ1QFT4kqmnVtwopMtpHgo4VP\nrFx4oPMmlIuChRJoGfjCBxXA109yAGVZdKVn5oVmOvKnZe6kKW5eC6H0bv3Q5j5u\ndbtip3XFxQZF8mepn+USN3EMdp413ol631JhMO4x71V04Aw3oO91ahd0g4y2kj+s\nLJFnUJjYW0CsspZQRCTB5fc1/1xo1ieGPZeNpu5r8szi37z8zGF87BykqvfIq49j\n4HhZ+6P2xuMiannVakpbl8ZaLPRcqnK69VndfZhkguEBguu3ehjVE28DtbMramZv\n8GYY0o7uMhht0YwL5mKg91iGN+hEg9t71/K9vSZuUQKBgQD7jjgc0BA9kVw8kgqS\nEenw4nRKyYEiPCt8E+C0rFSG/SPBFKoIw2hT/We8EssMa8rX2mZjWlR3i+ghE6aB\nDtkWvDnARF5118nieBdZQywljYlSDVkKi62I53SuEnB2LMRfPnmI/T2ZwTfLGL8v\nlWR6t98f2wJdx43E8RLblv0NSQKBgQDP8aTULvn8fSxbYvi/D2BFmBDKOoydrVfS\n9sCmsOXzrWszvXm8DlLjKaGq21r6eZUkafUU8M8CL5xhzE4M2pXX7T9NwHnLyhJ7\nNbiM80HKCbQxncahzGZJ76bLd45hCNM/2gTTF6TFD/xHrJ970VCUn9IkxkYN6C8F\nqlEkVYM56QKBgQDTZAsRY2MSafHJ0KvjXfxqedJh+n1y6H9eUFH3Yg3SNi1ylsvg\ne11Tn1IqANzyvi6CP7zk5saugzp5eUrljzWs3lXllU6P1tuHXYW5dDJICG2KLz9R\nFlmo/1/U3Bf3pt0KcLSvAqheablaCZy3/uGmIpf07BVL+2LOSgufzn0uSQKBgCpx\nt2Q8Bni8EA7DP+S3vb3W0S6GDuesVy3PgflESFuZvTT9atiwz8hgWghm58YShRe+\nrPDOSmK21yO7MP88qrM9UNuM+w9Wurj9eSMEEByuKGKsQrwJ3aMf0JrdV2mFBKGW\n3b88pzw2DBeRK6h5TApaKOmqsufpyZdNcWyKK9PpAoGAPPEDlqDei61CjW8P41yK\nbGIu1nCtIp/bn3jBkzU+jr8p7YQ0x8azMBlHR/FwYwHd5Rw/1cciDN8Wlymhgic1\nei8rhDKW7gzztYTZNWq5Jj1oQ1BK13OF3YpRM51hqE5mwLf6Z40bylZc7av0aTxT\nlfGqEcutHsKSiGvtsNULZOQ=\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-w5st8@bookwalay-3e5ef.iam.gserviceaccount.com",
+    "client_id": "106649988105728839266",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-w5st8%40bookwalay-3e5ef.iam.gserviceaccount.com"
+  }
+  
