@@ -1,3 +1,4 @@
+from _typeshed import SupportsKeysAndGetItem
 from flask import Flask, render_template, request, json
 import firebase_admin
 from firebase_admin import credentials
@@ -59,7 +60,7 @@ def place_order():
 def save_order():
     order = create_order_details(request.form.to_dict(flat=True))
     LOG.info("Creating unique orderId")
-    orderId = '1613807461009'
+    orderId = generateUniqueOrderId()
     order['orderId'] = orderId
     LOG.info("Push Data")
     res = db.collection('Order').document(orderId).set(order)
